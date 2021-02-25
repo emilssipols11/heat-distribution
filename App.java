@@ -139,9 +139,9 @@ public class App {
     
         }
 
-        Clock BBC = new Clock();
+        Clock clock = new Clock();
         RenderWindow main_wind = new RenderWindow(new VideoMode(800,700), "window");
-        RectangleShape[] poop = new RectangleShape[num*num];
+        RectangleShape[] metalPlate = new RectangleShape[num*num];
         int t = 0;
         while(main_wind.isOpen()){
             for ( Event myevent : main_wind.pollEvents()) {
@@ -150,39 +150,39 @@ public class App {
                 }
             }
 
-            if(BBC.getElapsedTime().asSeconds() > 0.1f){
+            if(clock.getElapsedTime().asSeconds() > 0.1f){
                 if(t<time){
                     t++;
                 }
-                BBC.restart();
+                clock.restart();
             }
             count = 0;
             
             for(int x = 0; x<num; x++){
                 for(int y = 0; y<num; y++){
-                    poop[count] = new RectangleShape();
-                    poop[count].setSize(new Vector2f(10,10));
-                    poop[count].setPosition(new Vector2f(10+10*x,10+10*y));
+                    metalPlate[count] = new RectangleShape();
+                    metalPlate[count].setSize(new Vector2f(10,10));
+                    metalPlate[count].setPosition(new Vector2f(10+10*x,10+10*y));
                     if(field[x][y][t] >= 0 && field[x][y][t] < 29){
-                        poop[count].setFillColor(Color.WHITE);
+                        metalPlate[count].setFillColor(Color.WHITE);
                     }
                     if(field[x][y][t] >= 29 && field[x][y][t] < 58){
-                        poop[count].setFillColor(Color.CYAN);
+                        metalPlate[count].setFillColor(Color.CYAN);
                     }
                     if(field[x][y][t] >= 58 && field[x][y][t] < 87){
-                        poop[count].setFillColor(Color.BLUE);
+                        metalPlate[count].setFillColor(Color.BLUE);
                     }
                     if(field[x][y][t] >= 87 && field[x][y][t] < 116){
-                        poop[count].setFillColor(Color.GREEN);
+                        metalPlate[count].setFillColor(Color.GREEN);
                     }
                     if(field[x][y][t] >= 116 && field[x][y][t] < 145){
-                        poop[count].setFillColor(Color.YELLOW);
+                        metalPlate[count].setFillColor(Color.YELLOW);
                     }
                     if(field[x][y][t] >= 145 && field[x][y][t] < 174){
-                        poop[count].setFillColor(Color.MAGENTA);
+                        metalPlate[count].setFillColor(Color.MAGENTA);
                     }
                     if(field[x][y][t] >= 174){
-                        poop[count].setFillColor(Color.RED);
+                        metalPlate[count].setFillColor(Color.RED);
                     }
                     count++;
                 }
@@ -190,7 +190,7 @@ public class App {
             count = 0;
             for(int x = 0; x<num; x++){
                 for(int y = 0; y<num; y++){
-                    main_wind.draw(poop[count]);
+                    main_wind.draw(metalPlate[count]);
                     count++;
                 }
             }
