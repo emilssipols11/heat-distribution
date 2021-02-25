@@ -13,6 +13,7 @@ yellow for 116K - 145K; magenta for 145K - 174K; red for >=174K. There also is c
 software application, for example gnuplot.
 
 Example below: 1D metal rod heat distribution graph over time
+
 ![screenshot of 1D rod graph](https://raw.githubusercontent.com/emilssipols11/heat-distribution/master/1d_rod_graph.jpg)
 
 # Setup
